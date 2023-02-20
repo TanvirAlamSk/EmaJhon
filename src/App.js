@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Navber from "./component/Navber/Navber";
+import Products from "./component/Products/Products";
+import OrderCard from "./component/OrderCard/OrderCard";
+import { useState } from "react";
+
 
 function App() {
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [selectedItem, setSelectedItem] = useState(0);
+  const [grandTotal, setgrandTotal] = useState(0);
+  const [tax, setTax] = useState(0);
+  const shopingCharge = 100;
+  const handelProduct = (price) => {
+    const newprice = totalPrice + price;
+    setTotalPrice(newprice);
+    const newSelectedItem = selectedItem + 1;
+    setSelectedItem(parseInt(newSelectedItem));
+    const newtax = ((newprice / 100) * 15);
+    setTax(parseFloat(newtax).toFixed(2));
+    setgrandTotal((newprice + newtax + shopingCharge).toFixed(2))
+  };
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navber></Navber>
+      <div className="show-product-price">
+        <Products handelProduct={handelProduct}></Products>
+        <OrderCard
+          totalPrice={totalPrice}
+          selectedItem={selectedItem}
+          shopingCharge={shopingCharge}
+          tax={tax}
+          grandTotal={grandTotal}
+        ></OrderCard>
+      </div>
     </div>
   );
 }

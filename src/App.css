@@ -1,8 +1,13 @@
-.App {
-  text-align: center;
+/* .App {
+  text-align: center; 
+} */
+
+.show-product-price {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +40,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
