@@ -7,7 +7,11 @@ export const route = createBrowserRouter([
     {
         path: "/", element: <Main></Main>, children: [
             { path: "/", element: <Products></Products> },
-            { path: "/review-order", element: <ReviewOrder></ReviewOrder> }
+            {
+                path: "/review-order",
+                loader: () => fetch('products.json'),
+                element: <ReviewOrder></ReviewOrder>
+            }
         ]
     },
     {}

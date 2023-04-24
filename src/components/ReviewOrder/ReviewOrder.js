@@ -1,10 +1,11 @@
 import React from 'react';
-import Cart from '../Products/Cart/Cart';
+import OrderReview from '../OrderReview/OrderReview';
 
 const ReviewOrder = () => {
     return (
         <div>
             <h5>ReviewOrder</h5>
+            <OrderReview></OrderReview>
         </div>
     );
 };

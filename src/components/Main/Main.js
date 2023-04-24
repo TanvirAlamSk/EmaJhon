@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
-import Products from '../Products/Products';
 import { Outlet } from 'react-router-dom';
 
 const Main = () => {
@@ -8,7 +7,6 @@ const Main = () => {
         <div>
             <Navbar></Navbar>
             <Outlet></Outlet>
-            {/* <Products></Products> */}
         </div>
     );
 };

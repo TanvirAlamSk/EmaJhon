@@ -11,7 +11,7 @@ const Navbar = () => {
             </div>
             <div>
                 <ul className='flex text-white text-sm'>
-                    <li className='mr-6'><Link to="/">Order</Link></li>
+                    <li className='mr-6'><Link to="/">Home</Link></li>
                     <li className='mr-6'><Link to="/review-order">Order Review</Link></li>
                     <li className='mr-6'><Link to="/inventory">Manage Inventory</Link></li>
                     <li className='mr-6'><Link to="/login">Login</Link></li>

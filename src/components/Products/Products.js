@@ -13,9 +13,6 @@ const Products = () => {
 
 
     const handelCart = (product) => {
-        // const newCart = [...cartItem, product]
-        // setCartItem(newCart)
-
 
         let cart = []
         const selectItem = cartItem.find(item => item.id == product.id)
@@ -46,21 +43,6 @@ const Products = () => {
         }
         localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart))
 
-
-
-        // let newCart = []
-        // const isExist = cartItem.find(item => item.id == product.id);
-        // if (!isExist) {
-        //     product.quantity = 1
-        //     newCart = [...cartItem, product]
-        // } else {
-        //     console.log(cartItem)
-        //     const rest = cartItem.filter(item => item.id != product.id)
-        //     isExist.quantity = isExist.quantity + 1
-        //     newCart = [...rest, isExist]
-        //     console.log(newCart)
-        // }
-        // setCartItem(newCart)
     }
 
     //get item from local storage
