@@ -56,7 +56,6 @@ const Products = () => {
         for (const id in getShoppingCart) {
             const items = products.find(product => product.id == id)
             if (items) {
-                console.log(items)
                 items.quantity = parseInt(getShoppingCart[id])
                 remainItem.push(items)
             }
